@@ -8,12 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Start a freebsd shell
     steps:
-    - name: Starting a freebsd VM, please wait. It may take 5 minutes
+    - name: Starting a freebsd VM, please wait. It may take 2-3 minutes
       uses: vmactions/freebsd-vm@main
       with:
         sync: sshfs
-        prepare: pkg install -y socat curl
         run: |
           freebsd-version
           (ls -lah)
-    - uses: neilpang/debugger-action@master
+    - uses: mxschmitt/action-tmate@v3
+      with:
+        limit-access-to-actor: true
