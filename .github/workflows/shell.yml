@@ -1,7 +1,21 @@
 
 name: shell.yml
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+    inputs:
+      release:
+        description: 'FreeBSD release'
+        required: true
+        type: choice
+        options:
+        - '12.4'
+        - '13.2'
+        - '13.3'
+        - '13.4'
+        - '14.0'
+        - '14.1'
+        default: 'yes'
 
 jobs:
   runshell:
@@ -11,6 +25,7 @@ jobs:
     - name: Starting a freebsd VM, please wait. It may take 2-3 minutes
       uses: vmactions/freebsd-vm@main
       with:
+        release: ${{ github.event.inputs.release || '14.1' }}
         sync: sshfs
         run: |
           freebsd-version
