@@ -9,13 +9,13 @@ on:
         required: true
         type: choice
         options:
-        - '12.4'
-        - '13.2'
-        - '13.3'
-        - '13.4'
-        - '14.0'
         - '14.1'
-        default: 'yes'
+        - '14.0'
+        - '13.4'
+        - '13.3'
+        - '13.2'
+        - '12.4'
+        default: '14.1'
 
 jobs:
   runshell:
