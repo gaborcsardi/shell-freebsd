@@ -10,14 +10,14 @@ on:
         type: choice
         options:
         - '15.0'
-        - '14.2-pre'
+        - '14.2'
         - '14.1'
         - '14.0'
         - '13.4'
         - '13.3'
         - '13.2'
         - '12.4'
-        default: '14.1'
+        default: '14.2'
 
 jobs:
   runshell:
