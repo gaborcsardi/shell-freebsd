@@ -21,7 +21,7 @@ on:
 
 jobs:
   runshell:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     name: Start a freebsd shell
     steps:
     - name: Starting a freebsd VM, please wait. It may take 2-3 minutes
